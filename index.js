@@ -36,6 +36,7 @@ const typeDefs = gql`
     price: Int
     description: String
     id: ID
+    img: String
   }
 
   type Restaurant {
@@ -43,6 +44,7 @@ const typeDefs = gql`
     name: String
     description: String
     dishes: [Dishes]
+    img: String
   }
 
   type Query {
@@ -57,7 +59,7 @@ const resolvers = {
   Query: {
     restaurants: async () => {
       const response = await Restaurants.find({}).exec();
-      //console.log("response: " + response);
+      console.log("response: " + response);
 
       return response;
       // return response.map((item) => {
