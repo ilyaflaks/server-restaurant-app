@@ -57,7 +57,7 @@ const resolvers = {
   Query: {
     restaurants: async () => {
       const response = await Restaurants.find({}).exec();
-      console.log("response: " + response);
+      //console.log("response: " + response);
 
       return response;
       // return response.map((item) => {
