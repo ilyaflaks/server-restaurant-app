@@ -59,7 +59,7 @@ const resolvers = {
   Query: {
     restaurants: async () => {
       const response = await Restaurants.find({}).exec();
-      console.log("response: " + response);
+      //console.log("response: " + response);
 
       return response;
       // return response.map((item) => {
@@ -124,7 +124,7 @@ app.get("/", (req, res) => {
   // );
   //.next/server/pages/index.html
   res.send(
-    "This is the back end for Ilya's Restaurant app. Feel free to visit /graphql route to explore the database"
+    "This is the back end for Ilya's Restaurant app. Feel free to visit /graphql route to explore the database. To use the playground, go to https://studio.apollographql.com/sandbox/explorer and https://ilya-server-restaurant.herokuapp.com/graphql in the input bar. Enjoy!"
   );
   //  res.sendFile(path.join(__dirname, ".next", "server", "pages", "index.html"));
 });
