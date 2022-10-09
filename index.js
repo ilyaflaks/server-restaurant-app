@@ -118,54 +118,10 @@ app.post("/payment", cors(), async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  // console.log("--------------------THIS IS NEW-");
-  // console.log(
-  //   path.join(__dirname, ".next", "static", "chunks", "pages", "index.js")
-  // );
-  //.next/server/pages/index.html
-  res.send(
-    "This is the back end for Ilya's Restaurant app. Feel free to visit /graphql route to explore the database. To use the playground, go to https://studio.apollographql.com/sandbox/explorer and https://ilya-server-restaurant.herokuapp.com/graphql in the input bar. Enjoy!"
-  );
-  //  res.sendFile(path.join(__dirname, ".next", "server", "pages", "index.html"));
+  res.sendFile(path.join(__dirname, "views", "index.html"));
 });
 
 app.listen(PORT, function () {
   console.log(`server running on port ${PORT}`);
   console.log(`gql path is ${apolloServer.graphqlPath}`);
 });
-
-// const {
-//   ApolloServerPluginLandingPageLocalDefault,
-// } = require("apollo-server-core");
-
-// const server = new ApolloServer({
-//   typeDefs,
-//   resolvers,
-//   csrfPrevention: true,
-//   cache: "bounded",
-//   plugins: [ApolloServerPluginLandingPageLocalDefault({ embed: true })],
-// });
-
-// const restList = async () => {
-//   var data = [];
-//   console.log("MONGO_URI: " + process.env.MONGO_URI);
-
-//   try {
-//     data = await Restaurants.find({});
-//     console.log("data", data);
-//   } catch (error) {
-//     if (error) {
-//       console.log(`Error: ${error}`);
-//     }
-//     throw error;
-//   }
-// };
-
-// server.listen(process.env.PORT || 4000).then(({ url }) => {
-//   console.log(`🚀  Server ready at ${url}`);
-//   // restList();
-// });
-
-// app.listen({ port: 4000 }, () =>
-//   console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
-// );
