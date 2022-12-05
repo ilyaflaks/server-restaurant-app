@@ -23,8 +23,6 @@ app.use(bodyParser.json());
 
 //app.use(express.static(path.join(__dirname, "public")));
 
-// app.use(express.static(path.join(__dirname, "./banana")));
-
 const typeDefs = gql`
   type Book {
     title: String
