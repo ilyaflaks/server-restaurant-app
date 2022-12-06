@@ -12,8 +12,6 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_TEST);
 const http = require("http");
 const cors = require("cors");
 const path = require("path");
-
-//app.use(express.static("public"));
 app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -60,14 +58,6 @@ const resolvers = {
       //console.log("response: " + response);
 
       return response;
-      // return response.map((item) => {
-      //   return {
-      //     id: item._id,
-      //     name: item.dame,
-      //     description: item.description,
-      //     dishes: item.dishes,
-      //   };
-      // });
     },
   },
 };
